@@ -1,8 +1,6 @@
 // export article.js and note.js
 
-module.exports = 
-    
-    {
+module.exports = {
 
     Article: require("./article"),
     Note: require("./note")
