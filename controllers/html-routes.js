@@ -41,7 +41,7 @@ router.get("/scrape", function(req, res) {
       // title
       stories.title = $(element).children("h2.grid__wrapper__card__text__title hed-m m-b-2-xs").text();
       // summary
-      stories.teaser = $(element).children("div.grid__wrapper__card__text__summary bod-s m-b-2-xs").text();
+      stories.summary = $(element).children("div.grid__wrapper__card__text__summary bod-s m-b-2-xs").text();
       // link
       stories.link = $(element).children("a.grid__wrapper__card grd-col col-12-xs col-6-m col-3-hd dsp-block-xs p-t-3-xs col-4-xl").children().attr("href");
 
