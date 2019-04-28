@@ -6,8 +6,11 @@ var db = require("../models");
 
 // default route
 router.get("/", function(req, res){
-    // console.log(req);
+
+    console.log(req);
+    
     res.render("index");
+
 });
 
 
@@ -18,7 +21,7 @@ var cheerio = require("cheerio");
 
 router.get("/scrape", function(req, res) {
   // us axios to get the homepage
-  axios.get("https://www.echojs.com/").then(function(response) {
+  axios.get("https://waypoint.vice.com/en_us").then(function(response) {
   
     // cheerio
 
@@ -36,11 +39,11 @@ router.get("/scrape", function(req, res) {
       var stories = {};
   
       // title
-      stories.title = $(element).children("h3.post-title").text();
+      stories.title = $(element).children("h2.grid__wrapper__card__text__title hed-m m-b-2-xs").text();
       // summary
-      stories.teaser = $(element).children("p").text();
+      stories.teaser = $(element).children("div.grid__wrapper__card__text__summary bod-s m-b-2-xs").text();
       // link
-      stories.link = $(element).children("h3.post-title").children().attr("href");
+      stories.link = $(element).children("a.grid__wrapper__card grd-col col-12-xs col-6-m col-3-hd dsp-block-xs p-t-3-xs col-4-xl").children().attr("href");
 
       // create database based on stories
       db.Stories.create(stories)
