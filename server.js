@@ -13,7 +13,7 @@ var db = require("./models");
 
 //port
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 //Express
 
@@ -45,7 +45,7 @@ mongoose.connect("mongodb://localhost/3000", { useNewUrlParser: true });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 // Controller
