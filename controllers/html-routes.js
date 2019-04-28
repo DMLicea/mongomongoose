@@ -1,3 +1,4 @@
+
 var express = require("express");
 var router = express.Router();
 
@@ -53,6 +54,7 @@ router.get("/scrape", function(req, res) {
           // log
           
           console.log(dbStories);
+          console.log("database created");
 
         })
 

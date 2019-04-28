@@ -18,7 +18,7 @@ $.getJSON("/stories", function(data) {
 
     html += "<p>";
 
-    html += data[i].teaser.replace("[Read More]", fullLink);
+    html += data[i].summary.replace("[Read More]", fullLink);
 
     html += "</p>";
 
@@ -35,6 +35,7 @@ $.getJSON("/stories", function(data) {
 });
 
 // scrape button
+
 $(document).on("click", ".scrape-btn", function() 
 
 {
@@ -43,6 +44,7 @@ $(document).on("click", ".scrape-btn", function()
   
   {
       console.log(data);
+      console.log("scrape went through");
   })
 
 })
